@@ -4,6 +4,12 @@ function git_prompt_info() {
   echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
 }
 
+# return just the branch name
+function git_branch_name() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo "${ref#refs/heads/}"
+}
+
 # Checks if working tree is dirty
 parse_git_dirty() {
   if [[ -n $(git status -s 2> /dev/null) ]]; then
@@ -15,7 +21,7 @@ parse_git_dirty() {
 
 # Checks if there are commits ahead from remote
 function git_prompt_ahead() {
-  if $(echo "$(git log origin/master..HEAD 2> /dev/null)" | grep '^commit' &> /dev/null); then
+  if $(echo "$(git log origin/$(git_branch_name)..HEAD 2> /dev/null)" | grep '^commit' &> /dev/null); then
     echo "$ZSH_THEME_GIT_PROMPT_AHEAD"
   fi
 }
