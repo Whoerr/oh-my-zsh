@@ -12,7 +12,7 @@ function git_branch_name() {
 
 # Checks if working tree is dirty
 parse_git_dirty() {
-  if [[ -n $(git status -s 2> /dev/null) ]]; then
+  if [[ -n $(git status -s --ignore-submodules=dirty 2> /dev/null) ]]; then
     echo "$ZSH_THEME_GIT_PROMPT_DIRTY"
   else
     echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
