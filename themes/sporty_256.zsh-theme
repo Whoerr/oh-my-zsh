@@ -6,8 +6,8 @@ function TIME()
 {
   date | grep -oE "([0-9]{1,2}:[0-9]{2}:[0-9]{2})"
 }
-PROMPT='%{$fg_bold[blue]%}$(git_prompt_info)$(git_prompt_ahead)$(git_prompt_short_sha) %F{208}%c%f $fg[yellow][`pwd`]$reset_color
-%{$fg_bold[white]%}%# %{$reset_color%}'
+PROMPT='╭─%{$fg_bold[blue]%}$(git_prompt_info)$(git_prompt_ahead)$(git_prompt_short_sha) %F{208}%c%f $fg[yellow][`pwd`]$reset_color
+╰─%{$fg_bold[white]%}%# %{$reset_color%}'
 RPROMPT='$(TIME)|%B%F{208}%n%f%{$fg_bold[white]%}@%F{039}%m%f%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%F{154}±|%f%F{124}"
