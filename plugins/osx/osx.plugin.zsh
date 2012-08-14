@@ -97,3 +97,7 @@ function trash() {
   IFS=$temp_ifs
 }
 
+
+function finder_link() {
+  strings $1 | tail -n1 | sed  "s/%/\//"
+}
