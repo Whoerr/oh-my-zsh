@@ -8,7 +8,7 @@ function TIME()
 }
 PROMPT='╭─%{$fg_bold[blue]%}$(git_prompt_info)$(git_prompt_ahead)$(git_prompt_short_sha) %F{208}%c%f $fg[yellow][`pwd`]$reset_color
 ╰─%{$fg_bold[white]%}%# %{$reset_color%}'
-RPROMPT='$(TIME)|%B%F{208}%n%f%{$fg_bold[white]%}@%F{039}%m%f%{$reset_color%}'
+RPROMPT='$(TIME)|%B%F{208}%n%f%{$fg_bold[white]%}@%F{039}%m%f%{$reset_color%}`rvm_prompt_info`'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%F{154}±|%f%F{124}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
