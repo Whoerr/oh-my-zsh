@@ -8,6 +8,7 @@ alias -- -='cd -'
 
 # Super user
 alias _='sudo'
+alias please='sudo'
 
 #alias g='grep -in'
 
@@ -18,6 +19,7 @@ alias history='fc -l 1'
 alias lsa='ls -lah'
 alias l='ls -lah'
 alias ll='ls -lh'
+alias la='ls -lA'
 alias sl=ls # often screw this up
 
 alias afind='ack-grep -il'
