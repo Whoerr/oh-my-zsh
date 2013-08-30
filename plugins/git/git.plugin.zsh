@@ -127,3 +127,10 @@ function _git_log_prettily(){
 }
 alias glp="_git_log_prettily"
 compdef _git glp=git-log
+
+function _git_whats_new(){
+  last_tag=`git tag -l | grep production | tail -n 1`
+  git cherry -v $last_tag
+}
+alias whatsnew="_git_whats_new"
+compdef _git whatssnew=git-cherry
