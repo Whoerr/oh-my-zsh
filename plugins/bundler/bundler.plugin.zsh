@@ -4,6 +4,7 @@ alias bl="bundle list"
 alias bp="bundle package"
 alias bo="bundle open"
 alias bu="bundle update"
+alias bj="_bundle_jump"
 
 # The following is based on https://github.com/gma/bundler-exec
 
@@ -29,6 +30,14 @@ _run-with-bundler() {
     bundle exec $@
   else
     $@
+  fi
+}
+
+_bundle_jump() {
+  if _bundler-installed && _within-bundled-project; then
+    cd `bundle show $1`
+  else
+    echo 'No in bundled dir.'
   fi
 }
 
