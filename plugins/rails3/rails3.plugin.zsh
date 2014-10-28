@@ -31,3 +31,8 @@ alias rdr='rake db:rollback'
 alias -g RET='RAILS_ENV=test'
 alias -g REP='RAILS_ENV=production'
 alias -g RED='RAILS_ENV=development'
+
+echo "It looks like you have been using the 'rails3' plugin,"
+echo "which has been deprecated in favor of a newly consolidated 'rails' plugin."
+echo "You will want to modify your ~/.zshrc configuration to begin using it."
+echo "Learn more at https://github.com/robbyrussell/oh-my-zsh/pull/2240"
