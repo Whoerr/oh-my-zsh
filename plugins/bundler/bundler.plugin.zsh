@@ -5,7 +5,7 @@ alias bo="bundle open"
 alias bu="bundle update"
 alias bj="_bundle_jump"
 
-bundler_version=`bundle version | cut -d' ' -f3`
+bundler_version=`bundle version | grep -oh -E "\d+\.\d+\.\d+"`
 if [[ $bundler_version > '1.4.0' || $bundler_version = '1.4.0' ]]; then
   if [[ "$(uname)" == 'Darwin' ]]
   then
