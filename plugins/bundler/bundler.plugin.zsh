@@ -5,9 +5,10 @@ alias bo="bundle open"
 alias bu="bundle update"
 alias bj="_bundle_jump"
 
-bundler_version=`bundle version | grep -oh -E "\d+\.\d+\.\d+"`
+bundler_version=`bundle version | ruby -ne "puts '$_'.match(/[0-9\.]+/)"`
+
 if [[ $bundler_version > '1.4.0' || $bundler_version = '1.4.0' ]]; then
-  if [[ "$(uname)" == 'Darwin' ]]
+  if [[ "$(uname)" == 'Darwin' ]];
   then
     local cores_num="$(sysctl hw.ncpu | awk '{print $2}')"
   else
